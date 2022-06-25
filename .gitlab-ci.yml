@@ -1,0 +1,20 @@
+image: reucon/builder
+stages:
+  - build-image
+variables:
+  MULTIARCH: 0
+  MAIN_BRANCH: main
+
+build-image-amd64:
+  stage: build-image
+  script:
+    - go build -ldflags '-extldflags "-static"'
+    - build-image.sh
+  variables:
+    CGO_ENABLED: "0"
+    GOOS: linux
+  rules:
+    - if: "$CI_COMMIT_BRANCH == $MAIN_BRANCH"
+  tags:
+    - docker
+    - x86_64
