@@ -3,12 +3,14 @@ package main
 import (
 	_ "embed"
 	"fmt"
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
+
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 const (
@@ -33,6 +35,11 @@ type Exporter struct {
 }
 
 func NewExporter(config Config) *Exporter {
+	if (config.HdgEndpoint == "") {
+		log.Println("Fatal: Environment variable HDG_ENDPOINT must be set to the URL of WebControl, e.g. http://192.168.1.20")
+		os.Exit(1)
+	}
+
 	dict, err := loadDict(config.HdgEndpoint, config.Language)
 	if err != nil {
 		panic(err)
