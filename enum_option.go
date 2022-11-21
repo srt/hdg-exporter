@@ -33,7 +33,9 @@ func loadEnumOptions(dict map[string]string) (map[string]map[string]enumOption, 
 			result[eo.Enum] = make(map[string]enumOption)
 		}
 
-		desc := strings.ReplaceAll(eo.Desc, "-\r\n", "&shy;")
+		desc := eo.Desc
+		desc = strings.ReplaceAll(eo.Desc, "-\r\n", "&shy;")
+		desc = strings.ReplaceAll(desc, "\r\n", " ")
 		result[eo.Enum][desc] = eo
 	}
 
