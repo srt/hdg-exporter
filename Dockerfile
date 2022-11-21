@@ -1,7 +1,7 @@
 FROM golang:1.19 AS builder
 WORKDIR /hdg-exporter
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o hdg-exporter
+RUN CGO_ENABLED=0 GOOS=linux go build -o hdg-exporter
 
 FROM scratch
 EXPOSE 8080
