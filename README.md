@@ -2,6 +2,12 @@
 
 Prometheus exporter for HDG Bavaria heating systems.
 
+## Docker
+
+A docker image is is available at `ghcr.io/srt/hdg-exporter`.
+You can find a sample `docker-compose.yml` with Prometheus, Grafana and hdg-exporter in the `samples` subdirectory.
+Just update the `HDG_ENDPOINT` environment variable.
+
 ## Configuration
 
 HDG Exporter is configured via environment variables. The following variables are supported:
@@ -16,4 +22,4 @@ HDG Exporter is configured via environment variables. The following variables ar
 
 ![Grafana Dashboard](grafana/dashboard.png)
 
-The [Dashboard](grafana/HDG-1665475565077.json) can be imported into Grafana.
+The [Dashboard](sample/grafana/provisioning/dashboards/HDG.json) can be imported into Grafana.

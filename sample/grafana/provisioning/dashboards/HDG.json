@@ -30,7 +30,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -107,7 +108,9 @@
       "id": 2,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -120,7 +123,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"2200[01]|2605\"}",
@@ -134,7 +138,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -211,7 +216,9 @@
       "id": 6,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -224,7 +231,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"22003|22022\"}",
@@ -234,7 +242,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"22004\"}",
@@ -245,7 +254,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"22023\"}",
@@ -260,7 +270,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -337,7 +348,9 @@
       "id": 4,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
@@ -352,7 +365,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"22005|2615|2616\"}",
@@ -366,7 +380,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -443,7 +458,9 @@
       "id": 5,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
@@ -458,7 +475,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"2400[012]\"}",
@@ -468,7 +486,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"24004\"}",
@@ -479,7 +498,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"24006\"}",
@@ -494,7 +514,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -571,7 +592,9 @@
       "id": 13,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -584,7 +607,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22002\"}",
@@ -594,7 +618,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22050\"}",
@@ -609,7 +634,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -686,7 +712,9 @@
       "id": 20,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
@@ -701,7 +729,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"2800[012]\"}",
@@ -711,10 +740,11 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
-          "expr": "hdg_value{id=~\"802[12]\"}",
+          "expr": "hdg_value{id=~\"802[1-9]\"}",
           "hide": false,
           "legendFormat": "{{desc1}}",
           "range": true,
@@ -726,7 +756,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -768,7 +799,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -789,7 +821,9 @@
       "id": 17,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -802,7 +836,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"2200[89]\"}",
@@ -812,7 +847,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"22019|22033\"}",
@@ -827,7 +863,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -869,7 +906,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -915,7 +953,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"}",
@@ -926,7 +965,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 16 >bool 0",
@@ -937,7 +977,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "(hdg_value{id=\"22010\"} == 0 >bool 0) + 1",
@@ -948,7 +989,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 18 >bool 0",
@@ -959,7 +1001,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "(hdg_value{id=\"22010\"} == 8 >bool 0) + 0.5",
@@ -970,7 +1013,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 2 >bool 0",
@@ -981,7 +1025,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 3 >bool 0",
@@ -992,7 +1037,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 4 >bool 0",
@@ -1003,7 +1049,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 5 >bool 0",
@@ -1014,7 +1061,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "(hdg_value{id=\"22010\"} == 1 >bool 0) - 0.5",
@@ -1025,7 +1073,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 7 >bool 0",
@@ -1036,7 +1085,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=\"22010\"} == 6 >bool 0",
@@ -1051,7 +1101,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -1064,7 +1115,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text"
+                "color": "text",
+                "value": null
               }
             ]
           },
@@ -1085,17 +1137,20 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.4",
+      "pluginVersion": "9.3.1",
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1111,7 +1166,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -1174,7 +1230,9 @@
       "id": 7,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
@@ -1189,7 +1247,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"2201[12345]|2203[789]\"}",
@@ -1203,7 +1262,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -1266,7 +1326,9 @@
       "id": 8,
       "options": {
         "legend": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
@@ -1281,7 +1343,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "increase(hdg_value{id=~\"2201[12345]|2203[789]\"}[1w])",
@@ -1295,7 +1358,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -1359,7 +1423,9 @@
       "id": 10,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -1372,7 +1438,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"22069\"}*1000",
@@ -1386,7 +1453,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -1462,7 +1530,9 @@
       "id": 11,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -1475,7 +1545,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "increase(hdg_value{id=~\"22069\"}[7d])*1000",
@@ -1485,7 +1556,8 @@
         },
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1501,7 +1573,8 @@
     },
     {
       "datasource": {
-        "type": "prometheus"
+        "type": "prometheus",
+        "uid": "TDVKLIv4z"
       },
       "fieldConfig": {
         "defaults": {
@@ -1564,7 +1637,9 @@
       "id": 15,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -1577,7 +1652,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus"
+            "type": "prometheus",
+            "uid": "TDVKLIv4z"
           },
           "editorMode": "code",
           "expr": "hdg_value{id=~\"22028\"}",
@@ -1605,6 +1681,6 @@
   "timezone": "",
   "title": "HDG",
   "uid": "yjl9FE3nz",
-  "version": 25,
+  "version": 26,
   "weekStart": ""
 }
