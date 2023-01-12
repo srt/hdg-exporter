@@ -23,3 +23,7 @@ HDG Exporter is configured via environment variables. The following variables ar
 ![Grafana Dashboard](grafana/dashboard.png)
 
 The [Dashboard](sample/grafana/provisioning/dashboards/HDG.json) can be imported into Grafana.
+
+## Similar Projects
+
+- [hdg-bavaria adapter for ioBroker](https://github.com/SteMaker/ioBroker.hdg-bavaria) includes a [wiki](https://github.com/SteMaker/ioBroker.hdg-bavaria/wiki) with a howto to lookup id values
