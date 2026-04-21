@@ -5,8 +5,13 @@ import (
 	_ "embed"
 	"encoding/json"
 	"encoding/xml"
+	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
+	"strings"
+
+	"golang.org/x/text/encoding/charmap"
 )
 
 type formatters struct {
@@ -41,7 +46,9 @@ func loadFormats(hdgEndpoint string, language string) (map[string]string, error)
 	}
 
 	var formatters formatters
-	if err := xml.Unmarshal(trimBom(val), &formatters); err != nil {
+	decoder := xml.NewDecoder(bytes.NewReader(trimBom(val)))
+	decoder.CharsetReader = charsetReader
+	if err := decoder.Decode(&formatters); err != nil {
 		return nil, err
 	}
 
@@ -51,6 +58,15 @@ func loadFormats(hdgEndpoint string, language string) (map[string]string, error)
 	}
 
 	return result, nil
+}
+
+func charsetReader(charset string, input io.Reader) (io.Reader, error) {
+	switch strings.ToLower(charset) {
+	case "iso-8859-1", "latin1", "latin-1":
+		return charmap.ISO8859_1.NewDecoder().Reader(input), nil
+	default:
+		return nil, fmt.Errorf("unsupported charset: %s", charset)
+	}
 }
 
 func trimBom(fileBytes []byte) []byte {
