@@ -2,13 +2,14 @@ package main
 
 import (
 	"bytes"
-	_ "embed"
+	"embed"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
 	"io"
 	"io/ioutil"
 	"net/http"
+	"path"
 	"strings"
 
 	"golang.org/x/text/encoding/charmap"
@@ -25,6 +26,9 @@ type object struct {
 	Format  string   `xml:"format,attr"`
 }
 
+//go:embed all:formatters
+var formatterFiles embed.FS
+
 func loadDict(hdgEndpoint string, language string) (map[string]string, error) {
 	val, err := get(hdgEndpoint + "/data/dictionaries/" + language + ".json")
 	if err != nil {
@@ -39,10 +43,10 @@ func loadDict(hdgEndpoint string, language string) (map[string]string, error) {
 	return result, nil
 }
 
-func loadFormats(hdgEndpoint string, language string) (map[string]string, error) {
-	val, err := get(hdgEndpoint + "/data/dictionaries/" + language + "_formatters.xml")
+func loadFormats(language string) (map[string]string, error) {
+	val, err := formatterFiles.ReadFile(path.Join("formatters", language+"_formatters.xml"))
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("embedded formatter file for language %q not found: %w", language, err)
 	}
 
 	var formatters formatters

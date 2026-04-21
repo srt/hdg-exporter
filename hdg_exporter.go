@@ -35,7 +35,7 @@ type Exporter struct {
 }
 
 func NewExporter(config Config) *Exporter {
-	if (config.HdgEndpoint == "") {
+	if config.HdgEndpoint == "" {
 		log.Println("Fatal: Environment variable HDG_ENDPOINT must be set to the URL of WebControl, e.g. http://192.168.1.20")
 		os.Exit(1)
 	}
@@ -45,7 +45,7 @@ func NewExporter(config Config) *Exporter {
 		panic(err)
 	}
 
-	formats, err := loadFormats(config.HdgEndpoint, config.Language)
+	formats, err := loadFormats(config.Language)
 	if err != nil {
 		panic(err)
 	}

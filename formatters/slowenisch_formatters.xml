@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<formatters>
+	<object name="iSEK" format="%0.0f s" />
+	<object name="iMIN" format="%0.1f min" />
+	<object name="iSTD" format="%0.1f Std" />
+
+	<object name="iSTK" format="%0.0f Stk" />
+	
+	<object name="iAMPERE" format="%0.1f A" />
+	<object name="iPASCAL" format="%0.0f pa" />
+	<object name="iTEMP" format="%0.0f °C" />
+	<object name="iKELV" format="%0.0f K" />
+	<object name="iPERC" format="%0.0f%%" />
+	<object name="iRPM" format="%0.0f U/m" />	
+	<object name="iKW" format="%0.0f kw" />	
+	<object name="iKWH" format="%0.0f kWh" />	
+	<object name="iMWH" format="%0.3f MWh" />	
+	
+	<object name="iTONNE" format="%0.0f t" />
+	<object name="iKG" format="%0.0f kg" />
+	<object name="iLITER" format="%0.0f l" />
+	
+	<object name="iVERSION" format="%0.2f" />
+	<object name="iREVISION" format="%0.0f" />
+
+	<object name="iFLOAT2" format="%0.2f" />
+</formatters>

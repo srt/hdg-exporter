@@ -18,6 +18,11 @@ HDG Exporter is configured via environment variables. The following variables ar
 | `HDG_LANGUAGE` | One of `dansk`, `deutsch`, `english`, `franzoesisch`, `italienisch`, `niederlaendisch`, `norwegisch`, `polnisch`, `schwedisch`, `slowenisch`, `spanisch` | `deutsch`             |
 | `HDG_IDS`      | Comma separated list of ids to export. Can be obtained from the Web UI or from [data.json](data.json).                                                   |                       |
 
+Formatter XML files are embedded into the exporter binary at build time. Place
+the files in [formatters](formatters) using the name
+`<HDG_LANGUAGE>_formatters.xml`, for example `deutsch_formatters.xml`, before
+running `go build` or building the Docker image.
+
 ## Grafana Dashboard
 
 ![Grafana Dashboard](grafana/dashboard.png)
