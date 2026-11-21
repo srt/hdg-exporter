@@ -11,6 +11,7 @@ type Config struct {
 	Ids         []int         `mapstructure:"HDG_IDS"`
 	Timeout     time.Duration `mapstructure:"HDG_TIMEOUT"`
 	Port        int           `mapstructure:"PORT"`
+	TimeZone    string        `mapstructure:"HDG_TIMEZONE"`
 }
 
 func loadConfig() (config Config, err error) {
@@ -22,6 +23,7 @@ func loadConfig() (config Config, err error) {
 	viper.SetDefault("HDG_LANGUAGE", "deutsch")
 	viper.SetDefault("HDG_TIMEOUT", "30s")
 	viper.SetDefault("PORT", 8080)
+	viper.SetDefault("HDG_TIMEZONE", "Europe/Berlin")
 
 	err = viper.ReadInConfig()
 	if err != nil {

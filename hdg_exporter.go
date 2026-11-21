@@ -167,6 +167,14 @@ func main() {
 	exporter := NewExporter(config)
 	prometheus.MustRegister(exporter)
 
+	location, err := time.LoadLocation(config.TimeZone)
+	if err != nil {
+		panic(err)
+	}
+	logbooks := logbookHandler{endpoint: config.HdgEndpoint, timeout: config.Timeout, location: location}
+	http.HandleFunc("/api/messages", logbooks.messages)
+	http.HandleFunc("/api/maintenance", logbooks.maintenance)
+
 	log.Printf("Starting server on port %v", config.Port)
 	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(config.Port), nil))
 }
