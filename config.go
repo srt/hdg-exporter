@@ -6,12 +6,15 @@ import (
 )
 
 type Config struct {
-	HdgEndpoint string        `mapstructure:"HDG_ENDPOINT"`
-	Language    string        `mapstructure:"HDG_LANGUAGE"`
-	Ids         []int         `mapstructure:"HDG_IDS"`
-	Timeout     time.Duration `mapstructure:"HDG_TIMEOUT"`
-	Port        int           `mapstructure:"PORT"`
-	TimeZone    string        `mapstructure:"HDG_TIMEZONE"`
+	HdgEndpoint  string        `mapstructure:"HDG_ENDPOINT"`
+	Language     string        `mapstructure:"HDG_LANGUAGE"`
+	Ids          []int         `mapstructure:"HDG_IDS"`
+	Timeout      time.Duration `mapstructure:"HDG_TIMEOUT"`
+	Port         int           `mapstructure:"PORT"`
+	TimeZone     string        `mapstructure:"HDG_TIMEZONE"`
+	WriteEnabled bool          `mapstructure:"HDG_WRITE_ENABLED"`
+	WriteToken   string        `mapstructure:"HDG_WRITE_TOKEN"`
+	WriteAllow   string        `mapstructure:"HDG_WRITE_ALLOW"`
 }
 
 func loadConfig() (config Config, err error) {
@@ -24,6 +27,8 @@ func loadConfig() (config Config, err error) {
 	viper.SetDefault("HDG_TIMEOUT", "30s")
 	viper.SetDefault("PORT", 8080)
 	viper.SetDefault("HDG_TIMEZONE", "Europe/Berlin")
+	viper.SetDefault("HDG_WRITE_ENABLED", false)
+	viper.SetDefault("HDG_WRITE_ALLOW", "")
 
 	err = viper.ReadInConfig()
 	if err != nil {

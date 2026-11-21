@@ -32,6 +32,8 @@ type Exporter struct {
 	UpMetric    *prometheus.Desc
 	MetricInfos []metricInfo
 	Ids         []int
+	Meta        map[int]meta
+	EnumOptions map[string]map[string]enumOption
 }
 
 func NewExporter(config Config) *Exporter {
@@ -91,6 +93,8 @@ func NewExporter(config Config) *Exporter {
 		),
 		MetricInfos: metricInfos,
 		Ids:         ids,
+		Meta:        meta,
+		EnumOptions: enumOptions,
 	}
 }
 
@@ -174,6 +178,19 @@ func main() {
 	logbooks := logbookHandler{endpoint: config.HdgEndpoint, timeout: config.Timeout, location: location}
 	http.HandleFunc("/api/messages", logbooks.messages)
 	http.HandleFunc("/api/maintenance", logbooks.maintenance)
+
+	if config.WriteEnabled {
+		w, err := newWriter(config, exporter.Meta, exporter.EnumOptions)
+		if err != nil {
+			panic(err)
+		}
+		if !w.enabled() {
+			log.Fatal("HDG_WRITE_ENABLED is set but HDG_WRITE_TOKEN or HDG_WRITE_ALLOW is empty")
+		}
+		http.HandleFunc("/api/writable", w.writable)
+		http.HandleFunc("/api/set", w.set)
+		log.Printf("Write support enabled for %d parameter(s)", len(w.allow))
+	}
 
 	log.Printf("Starting server on port %v", config.Port)
 	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(config.Port), nil))
