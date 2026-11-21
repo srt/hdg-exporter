@@ -28,6 +28,7 @@ func loadConfig() (config Config, err error) {
 	viper.SetDefault("PORT", 8080)
 	viper.SetDefault("HDG_TIMEZONE", "Europe/Berlin")
 	viper.SetDefault("HDG_WRITE_ENABLED", false)
+	viper.SetDefault("HDG_WRITE_TOKEN", "")
 	viper.SetDefault("HDG_WRITE_ALLOW", "")
 
 	err = viper.ReadInConfig()
