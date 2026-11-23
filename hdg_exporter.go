@@ -178,6 +178,7 @@ func main() {
 	logbooks := logbookHandler{endpoint: config.HdgEndpoint, timeout: config.Timeout, location: location}
 	http.HandleFunc("/api/messages", logbooks.messages)
 	http.HandleFunc("/api/maintenance", logbooks.maintenance)
+	http.HandleFunc("/api/notifications", logbooks.notifications)
 
 	if config.WriteEnabled {
 		w, err := newWriter(config, exporter.Meta, exporter.EnumOptions)

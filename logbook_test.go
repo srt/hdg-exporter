@@ -68,3 +68,54 @@ func TestParseMessagesEmptyPage(t *testing.T) {
 		t.Errorf("want empty, non-nil slice, got %#v", got)
 	}
 }
+
+// notificationsPage mirrors the real hdg_tab=4 table: a header row, then dispatched messages
+// with the time in the first cell and the status in an <img title="Status: N"> last cell.
+const notificationsPage = `<table id="valueTable"><tbody>
+	<tr>
+		<td>Datum/Zeit</td><td>Fehlernr.</td><td>Meldung</td><td>Nachricht</td>
+		<td>Versand</td><td>Empfänger</td><td>Status</td>
+	</tr>
+	<tr>
+		<td style="color:#999;">23.11.2026&nbsp;11:02</td>
+		<td style="color:#999;">2</td>
+		<td style="text-align:left;">Wartung</td>
+		<td style="text-align:left; white-space:normal">Aschenbehälter leeren (Warnung)</td>
+		<td style="text-align:center;">Email</td>
+		<td style="text-align:left; white-space:normal;">heizung@parnitz.de</td>
+		<td><img src="images/_interface/icon_check.png" title="Status: 0" /></td>
+	</tr>
+	<tr>
+		<td style="color:#999;">11.11.2026&nbsp;16:40</td>
+		<td style="color:#999;">98</td>
+		<td style="text-align:left;">Warnung</td>
+		<td style="text-align:left;">WA002:Spannungswiederkehr bei Stromausfall</td>
+		<td style="text-align:center;">Email</td>
+		<td style="text-align:left;">heizung@parnitz.de</td>
+		<td><img src="images/_interface/icon_check.png" title="Status: 0" /></td>
+	</tr>
+	<tr><td>broken</td><td>1</td><td>Wartung</td><td>x</td><td>Email</td><td>a@b</td><td></td></tr>
+</tbody></table>`
+
+func TestParseNotifications(t *testing.T) {
+	got := parseNotifications(notificationsPage, berlin(t))
+	want := []Notification{
+		{time.Date(2026, 11, 23, 10, 2, 0, 0, time.UTC), "Wartung", "Aschenbehälter leeren (Warnung)", "Email", "heizung@parnitz.de", 0},
+		{time.Date(2026, 11, 11, 15, 40, 0, 0, time.UTC), "Warnung", "WA002:Spannungswiederkehr bei Stromausfall", "Email", "heizung@parnitz.de", 0},
+	}
+	if len(got) != len(want) {
+		t.Fatalf("got %d notifications, want %d: %+v", len(got), len(want), got)
+	}
+	for i := range want {
+		if !got[i].Timestamp.Equal(want[i].Timestamp) || got[i].Kind != want[i].Kind || got[i].Text != want[i].Text ||
+			got[i].Channel != want[i].Channel || got[i].Recipient != want[i].Recipient || got[i].Status != want[i].Status {
+			t.Errorf("notification %d: got %+v, want %+v", i, got[i], want[i])
+		}
+	}
+}
+
+func TestParseNotificationsEmptyPage(t *testing.T) {
+	if got := parseNotifications("<html></html>", berlin(t)); got == nil || len(got) != 0 {
+		t.Errorf("want empty, non-nil slice, got %#v", got)
+	}
+}
